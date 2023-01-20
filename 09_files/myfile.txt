@@ -1,0 +1,1 @@
+the content we are writing into the file.we can pass the content direct into the puts() function directly. Hi my name is sahil ;)
