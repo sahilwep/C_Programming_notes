@@ -1,0 +1,88 @@
+# Programs to pratice
+
+
+>>>>> arthematic operators, and more...
+
+1   -> swaping of two no's.
+2   -> WAP to perform all arthmetic operator on integer & with float ( take input with users..
+3   -> WAP to take input radius & print area and circumference of circle.
+4   -> WAP to find simple intrest...
+5   -> WAP to find compound intrest...
+6   -> WAP to find the square of a number..
+7   -> WAP to find the cube of a number..
+8   -> WAP to convert temp from celsius to farenheit..
+9   -> WAP to convert temp from farenheit to celsius..
+10  -> WAP to calculate percentage of five sub..
+11  -> WAP to take input of length & breadth of ractangle and find its perimeter & area...
+12  -> WAP to take input centimeter and convert it into meter and kilometer...
+13  -> WAP to take input two angle of triangle and find the third angle..
+14  -> WAP to take input base and height of a triangle and find the area..
+15  -> WAP to calculate Equaliteral triangle..
+
+
+>>>>> if-else problems...
+
+16  -> write a program to check the year is leap-year or not...
+17  -> write a program to check no is even or not 
+18  -> write a program to check no is odd or not 
+19  -> write a program to check the no is divisible by 5 or not...
+20  -> write a program to check the no is divisible by 5 and less than 40...
+21  -> write a program to check the no is even & less than 20 
+22  -> write a program to check the no is odd & less than 40 
+
+>>>>> loops , switch-case ,goto ...
+
+23  -> WAP to print number from 0 to n (take n as input) using while , for & do while loops...
+24  -> WAP to print number from n to 0 (take n as input)...
+25  -> WAP to print any table (n vlaue given by input)...
+26  -> WAP to print Fibonacci series..
+27  -> WAP to print prime no' series..
+28  -> WAP to print even no series..
+29  -> WAP to print odd no series..
+30  -> WAP to print sum of 1 to n ..
+31  -> WAP to print factorial of any given no..
+32  -> WAP to check the no is odd or even..
+33  -> WAP to apply the goto statements..
+34  -> WAP to print the to check the week with number order using switch case 
+35  -> WAP to print the to check the year with number order using switch case 
+
+
+>>>>> functions, pointers, recursion & more...
+
+36  -> WAP to add two no using functions with no argument & no return vlaue.
+37  -> WAP to add two no using functions with no argument &  return vlaue.
+38  -> WAP to add two no using functions with  argument & no return vlaue.
+39  -> WAP to add two no using functions with  argument &  return vlaue.
+40  -> WAP to use concept of pointers(make a pointer variable & normal variable, store the address of normal variable into the pointer variable and print it...).
+41  -> WAP to print 0 to n using the recursion
+42  -> WAP to print n to 0 using the recursion
+43  -> WAP to print any table using the recursion
+
+>>>>> Array 1D & 2D...
+
+44  -> WAP to take the input from users into 1D Array & print the output.
+45  -> WAP to take the input from users into 2D Array & print the output.
+46  -> WAP in 2D array that take input from user and perform matrix multiplication.
+47  -> WAP in 2D array that take input from user and perform matrix additions.
+
+>>>>> strings...
+
+48  -> WAP that store strings & print that strings using scanf() and printf()
+49  -> WAP that store strings & print that strings using gets() and puts()
+50  -> WAP to print strings character using loops(using the format specifier of character %c).
+51  -> WAP that perform various strings functions ( strlen(),strcpy(),strcat(),strrev(),strcmp(),strlwr(),strupr())  ***
+
+
+>>>>> searching & sorting...
+
+52  -> WAP to show the concept of linear searching.
+53  -> WAP to show the concept of sorting.
+54  -> WAP to show the concept of binary searching.
+
+>>>>> Files...
+
+55  -> WAP to perform read in file
+56  -> WAP to perform write in file 
+57  -> WAP to perform every functions of Files 
+
+>>>>> 
