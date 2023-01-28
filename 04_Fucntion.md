@@ -147,61 +147,18 @@ void swap(int x, int y){     // formal parameter.
 ```
 ## Types of function
 * There are mainly 4 type of function.
-  * Function with no argument  and no return value.
-  * Function with no argument  and return value.
-  * Function with argument  and no return value.
-  * Function with argument  and return value.
+  * void
+  * return
+  * parameterized
+  * non-parameterized
 
 
-### Function with no argument  and no return value.
-
+### Void
+* void function don't return anything.
 ```C
 #include<stdio.h>
 
-void add();
-
-int main(void){
-    add();
-    return 0;
-}
-
-void add(){
-    int x=10,y=20,sum;
-    sum = x + y;
-    printf("sum is : %d",sum);
-}
-```
-
-### Function with no argument  and return value.
-
-
-```C
-#include<stdio.h>
-
-int add();
-
-int main(void){
-    int result;
-    result = add();
-    printf("sum is : %d",result);
-    return 0;
-}
-
-int add(){
-    int x=10,y=20,sum;
-    sum = x + y;
-    return sum;
-}
-```
-
-
-### Function with argument  and no return value.
-
-
-```C
-#include<stdio.h>
-
-void add(int a , int b);
+void add(int x , int y);
 
 int main(void){
     int x=10,y=20,sum;
@@ -209,30 +166,81 @@ int main(void){
     return 0;
 }
 
-void add(int a,int b){
-    sum = a + b;
-    printf("sum is : %d",sum)
+void add(int x , int y){
+    int sum = x + y;
+    printf("sum is : %d",sum);
 }
 ```
-### Function with argument  and return value.
+
+### Return
+* return function return the operation in function from where it called.
 
 
 ```C
 #include<stdio.h>
 
-int add(int x, int y);
+int add(int x , int y);
 
 int main(void){
-    int a=10,b=20,result;
-    result = add(a,b);
+    int x=10,y=20,result;
+    result = add(x,y);
     printf("sum is : %d",result);
     return 0;
 }
 
+int add(int x ,int y){
+    int sum = x + y;
+    return sum;
+}
+```
+
+
+### Parameterized
+* During function definition we provide arguments.
+
+```C
+#include<stdio.h>
+
+int add(int x ,int y);
+
+int main(void){
+
+    int x=20,y=10,sum;
+    sum = add(x,y);
+    printf("The sum of x and y is : %d",sum);
+    return 0;
+}
+
 int add(int x, int y){
+
+    int sum;
     sum = x + y;
     return sum;
 }
+
+```
+### Non-parameterized
+* During function definition we didn't provide arguments.
+
+
+```C
+#include<stdio.h>
+
+void add();
+
+int main(void){
+
+    add();
+    return 0;
+}
+
+void add(){
+
+    int x=20,y=10,sum;
+    sum = x + y;
+    printf("The sum of x and y is : %d",sum);
+}
+
 ```
 
 
