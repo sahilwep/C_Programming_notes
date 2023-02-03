@@ -260,9 +260,9 @@ int binary(int arr[], int x, int low, int high)
 * It is easier searching algorithm.
 * Liner search no need for sorted list of array.
 
-|index|0| 1|2|3|4|5|6|7|8|9|
-|-|-|-|-|-|-|-|-|-|-|-|--|
-|Array |10|90|30|10|70|25|99|103|102|7|
+|index|0 | 1| 2|3 |4 |5 |6 |7 |8 |9 |
+|-----|--|--|--|--|--|--|--|--|--|--|
+|Array|10|90|30|10|70|25|99|103|102| 7 |
 
 * Suppose we want to find `25`, then we are comparing `25` with each array element until we find `25`.
 
