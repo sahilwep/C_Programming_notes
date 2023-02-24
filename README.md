@@ -5,7 +5,7 @@
 
 *** 
 
-## Why I post my notes for free ?
+## Why I am posting my notes for free ?
 * My notes are for those people, who want to learn for free..
 * As a opensource contributor it's my duty to share my knowledge with others..
 * If you want to contrubute with my projects , ping me at : 
