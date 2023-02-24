@@ -8,7 +8,7 @@
 ## Why I am posting my notes for free ?
 * My notes are for those people, who want to learn for free..
 * As a opensource contributor it's my duty to share my knowledge with others..
-* If you want to contrubute with my projects , ping me at : 
+* If you want to contrubute with my projects, ping me at : 
     * mail : ``sahilwep@gmail.com``
     * twitter : ``@sahilwep``
     * Discord : ``sahilwep#8436``
@@ -119,5 +119,7 @@
   * Union
 
 ***
+
+Thanks For Reading :)
 
   
