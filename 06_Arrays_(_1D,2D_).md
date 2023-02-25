@@ -2,7 +2,7 @@
 
 * Array is a collection to similar or homogenous datatype in which each element is unique & located at contiguous (continuos/sequential) memory location.
 * Array store multiple values of same datatype.
-* Values in array i known as array elements.
+* Values in array is known as array elements.
 * We can create array of int ,char & string etc.
 * Array is an ordered list values.
 
