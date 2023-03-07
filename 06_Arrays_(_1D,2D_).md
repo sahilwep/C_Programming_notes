@@ -54,11 +54,11 @@ int main(void){
     // Input
     for(int i = 0 ; i< 9 ; i++){
         printf("Enter the arry[%d]",i);
-        scanf("%" , &arry[i]);
+        scanf("%d" , &arry[i]);
     }
     // Output
     for(int i = 0 ; i<9 ; i++){
-        printf("arry[%d] = %d " ,i, arry[i]);
+        printf("\narry[%d] = %d " ,i, arry[i]);
     }
     return 0;
 }
