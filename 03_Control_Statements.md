@@ -283,15 +283,15 @@ return(expression)
 > example
 ```C
 int main(void){
-    int a = 2 ,square_root;
-    square_root = sqr(a);
-    printf("square root is : %d",square_root);
+    int a = 2 ,square;
+    square = sqr(a);
+    printf("square is : %d",square);
     return 0;
 }
 
 int sqr(int x){
     int result = x*x;
-    return result; // return the square result
+    return result; // return the result where it called.
 }
 ```
 
