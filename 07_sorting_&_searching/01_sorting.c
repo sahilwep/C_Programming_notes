@@ -1,37 +1,34 @@
+// Sorting : Bubble Sort.
+
 #include <stdio.h>
 
-void print(int a[], int n) // function to print array elements
-{
-    int i;
-    for (i = 0; i < n; i++)
-    {
-        printf("%d ", a[i]);
-    }
-}
-void bubble(int a[], int n) // function to implement bubble sort
-{
-    int i, j, temp;
-    for (i = 0; i < n; i++)
-    {
-        for (j = i + 1; j < n; j++)
-        {
-            if (a[j] < a[i])
-            {
-                temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
+void sort(int list[], int size){
+    for(int i = 0 ; i < size -1; i++){
+        for(int j = 0 ; j < size -1; j++){
+            if(list[j] > list[j+1]){
+                int temp = list[j];
+                list[j] = list[j+1];
+                list[j+1] = temp;
             }
         }
     }
 }
-void main()
-{
-    int i, j, temp;
-    int a[5] = {10, 35, 32, 13, 26};
-    int n = sizeof(a) / sizeof(a[0]);
-    printf("Before sorting array elements are - \n");
-    print(a, n);
-    bubble(a, n);
-    printf("\nAfter sorting array elements are - \n");
-    print(a, n);
+
+void display(int list[], int size){
+    printf("\n Array list : ");
+    for(int i = 0; i < size ;i++){
+        printf("%d  ", list[i]);
+    }
+}
+
+int main(void){
+    int list[] = {10, 7, 8, 5, 6, 4, 1, 2, 3};
+    int size = sizeof(list)/sizeof(list[0]);
+    
+    display(list, size);
+    sort(list, size);
+    printf("\n\n After sorted \n");
+    display(list, size);
+
+    return 0;
 }

@@ -1,8 +1,8 @@
 # Sorting & Searching
 
 ## Sorting
-* Sorting is a process in which we sort the value of index of array in ascending of descending order.
-* For sorting the list of array we have so many algorithms but we are going to learn the bubble sort.
+* Sorting is a method in with we sort the list or array elements in ascending or descending order.
+* For sorting the list or array we have many algorithms, but we are going to learn the bubble sort.
 
 |4|2|6|1|5|3| Unsorted list|
 |-|-|-|-|-|-|-|
@@ -143,113 +143,131 @@ Compare `-2` and `-9` & Swap `-2` to right.
 
 
 ```C
-bubbleSort(array)
-  for i <- 1 to indexOfLastUnsortedElement-1
-    if leftElement > rightElement
-      swap leftElement and rightElement
-end bubbleSort
-```
-> Example
-
-```C
-#include <stdio.h>
-
-void print(int a[], int n) // function to print array elements
-{
-    int i;
-    for (i = 0; i < n; i++)
-    {
-        printf("%d ", a[i]);
-    }
-}
-void bubble(int a[], int n) // function to implement bubble sort
-{
-    int i, j, temp;
-    for (i = 0; i < n; i++)
-    {
-        for (j = i + 1; j < n; j++)
-        {
-            if (a[j] < a[i])
-            {
-                temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
+bubbleSort(arr_list, size){
+    // To access the arr_list.
+    for(i = 0 ; i < size -1 ; i++){
+        // To compare the accessed element with each element.
+        for(j = 0 ; j < size -1; j++){
+            // If left element is > than right element
+            if(arr_list[j] > arr_list[j+1]){
+                // swap
+                int temp = arr_list[j];
+                arr_list[j] = arr_list[j+1];
+                arr_list[j+1] = temp;
             }
         }
     }
 }
-void main()
-{
-    int i, j, temp;
-    int a[5] = {10, 35, 32, 13, 26};
-    int n = sizeof(a) / sizeof(a[0]);
-    printf("Before sorting array elements are - \n");
-    print(a, n);
-    bubble(a, n);
-    printf("\nAfter sorting array elements are - \n");
-    print(a, n);
+```
+> Example
+
+```C
+// Sorting : Bubble Sort.
+#include <stdio.h>
+
+// Bubble sort function.
+void sort(int list[], int size){
+    for(int i = 0 ; i < size -1; i++){
+        for(int j = 0 ; j < size -1; j++){
+            if(list[j] > list[j+1]){
+                int temp = list[j];
+                list[j] = list[j+1];
+                list[j+1] = temp;
+            }
+        }
+    }
+}
+
+// To print the list.
+void display(int list[], int size){
+    printf("\n Array list : ");
+    for(int i = 0; i < size ;i++){
+        printf("%d  ", list[i]);
+    }
+}
+
+int main(void){
+    int list[] = {10, 7, 8, 5, 6, 4, 1, 2, 3};
+    int size = sizeof(list)/sizeof(list[0]);
+    
+    display(list, size);
+    sort(list, size);
+    printf("\n\n After sorted \n");
+    display(list, size);
+
+    return 0;
 }
 ```
 
 ## Searching
-* Searching mean locating a particular element in the collection of elements.
+* Searching mean `locating` a `particular` `element` in the `collection` of `elements`.
 * We have many searching algorithm but we are looking into in linear search and binary search.
 
 ### Binary Search
 * Binary searching is searching algorithm for finding the element position in a stored array.
-* In this method the element of is searched in the middle of position of array.
+* In this method the element of is searched in the middle of position of array, by dividing the list into half until we find the target element.
 * Binary search implement only on sorted array list.
+* Binary Search is much more efficient than linear search. 
 
 ```C
-/* In binary search we are making a function that need the array list, the finding value , the lowest index and the highest index .
-we need to find the array mid value
-mid = low + (high - low) / 2
-*/
-
+// Binary Search
 #include <stdio.h>
 
-int binary(int arr[], int x, int low, int high);
-
-int main(void)
-{
-
-    int arr[] = {4,5,6,7,8,9}; // the array list.
-    int n = sizeof(arr) / sizeof(arr[0]);   // the size of array list.
-    int x = 8;                              // the finding value.
-    int store;
-    store = binary(arr, x, 0, n - 1); // function passing 4 parameter -> array list, finding value , lowest index , highest index.
-    if (store == -1)
-    {
-        printf("The element is not in the list.");
+// To sort the unsorted elements in list.
+void sort(int list[], int size){
+    for(int i = 0 ; i < size -1 ; i++){
+        for(int j = 0 ; j < size -1 ; j++){
+            if(list[j] > list[j+1]){
+                int temp = list[j];
+                list[j] = list[j+1];
+                list[j+1] = temp;
+            }
+        }
     }
-    else
-    {
-        printf("The element is at the index of %d", store);
-    }
-    return 0;
 }
 
-int binary(int arr[], int x, int low, int high)
-{
-    // loop runs until the low meets high point.
-    while (low <= high)
-    {
-        int mid = low + (high - low) / 2;
-        if (arr[mid] == x)
-        {
+// To print the elements in list.
+void print(int list[], int size){
+    printf("\n Array List : ");
+    for(int i = 0; i < size ; i++){
+        printf("%d  ", list[i]);
+    }
+}
+
+// Binary Searching Function.
+int binarySearch(int list[], int size, int target){
+    int start = 0; 
+    int end = size -1;
+    int mid = ((start + end)/2);
+    for(int i = start ; start <= end; i++){
+        if(target == list[mid]){
             return mid;
         }
-        if (arr[mid] < x)
-        {
-            low = mid + 1;
+        if(target < list[mid]){
+            end = mid -1;
         }
-        else
-        {
-            high = mid - 1;
+        if(target > list[mid]){
+            start = mid +1;
         }
+        mid = (start + end)/2;
     }
 
     return -1;
+}
+
+int main(void){
+
+    int list[] = {11, 10, 9, 7, 8, 5, 6, 4, 1, 2, 3};
+    int size = sizeof(list)/sizeof(list[0]);
+    int target = 1;
+
+    sort(list, size);
+    print(list, size);
+
+    int result = binarySearch(list, size, target);
+    (result == -1) ? printf("\n Not Found.") : printf("\n Found at index : %d", result);
+
+    return 0;
 }
 ```
 ---
@@ -258,7 +276,8 @@ int binary(int arr[], int x, int low, int high)
 ### Linear Search
 * Linear search is sequential searching algorithm that start at one end and goes through each element of the list until desired element is found otherwise search is continue till the end of the data set.
 * It is easier searching algorithm.
-* Liner search no need for sorted list of array.
+* There is no need of sorted list to use this algorithm. 
+* Not efficient searching algorithms.
 
 |index|0 | 1| 2|3 |4 |5 |6 |7 |8 |9 |
 |-----|--|--|--|--|--|--|--|--|--|--|
@@ -269,45 +288,31 @@ int binary(int arr[], int x, int low, int high)
 
 
 ```C
+// Linear Search
 #include <stdio.h>
 
-/* linear search compare the item with each index...
-
-linear search function need 3 parameter => array list, size of array list, the searching item.
-
-make a loop start from i=0 that goes to the last size of the array & if arr[i]=match the finding return it...
-
-*/
-
-int search(int arr[], int size, int finding);
-
-int main(void)
-{
-    int arr[] = {2, 33, 112, 31, 10, 23, 10, 5, 6};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    int finding = 5;
-    int found = search(arr, size, finding);
-    if (found == -1)
-    {
-        printf("item is not in the list.");
+// Linear Search function.
+int linearSearch(int list[], int size, int target){
+    if(list[size] == 0 ){
+        return -1;
     }
-    else
-    {
-        printf("The item is at the index of %d", found);
-    }
-}
-
-int search(int arr[], int size, int finding)
-{
-
-    for (int i = 0; i < size; i++)
-    {
-        if (arr[i] == finding)
-        {
+    for(int i = 0; i <= size - 1 ;i++){
+        if(target == list[i]){
             return i;
         }
     }
     return -1;
+}
+int main(void){
+    
+    int list[] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    int size = sizeof(list)/sizeof(list[0]);
+    int target = 7;
+
+    int result = linearSearch(list, size, target);
+    (result == -1) ? printf("\n Not Found") : printf("\n Found at index : %d", result); 
+
+    return 0;
 }
 ```
 

@@ -1,52 +1,56 @@
-/* In binary search we are making a function that need the array list, the finding value , the lowest index and the highest index .
-we need to find the array mid value
-mid = low + (high - low) / 2
-
-
-*/
-
+// Binary Search
 #include <stdio.h>
 
-int binary(int arr[], int x, int low, int high);
-
-int main(void)
-{
-
-    int arr[] = {4,5,6,7,8,9}; // the array list.
-    int n = sizeof(arr) / sizeof(arr[0]);   // the size of array list.
-    int x = 8;                              // the finding value.
-    int store;
-    store = binary(arr, x, 0, n - 1); // function passing 4 parameter -> array list, finding value , lowest index , highest index.
-    if (store == -1)
-    {
-        printf("The element is not in the list.");
+void sort(int list[], int size){
+    for(int i = 0 ; i < size -1 ; i++){
+        for(int j = 0 ; j < size -1 ; j++){
+            if(list[j] > list[j+1]){
+                int temp = list[j];
+                list[j] = list[j+1];
+                list[j+1] = temp;
+            }
+        }
     }
-    else
-    {
-        printf("The element is at the index of %d", store);
-    }
-    return 0;
 }
 
-int binary(int arr[], int x, int low, int high)
-{
-    // loop runs until the low meets high point.
-    while (low <= high)
-    {
-        int mid = low + (high - low) / 2;
-        if (arr[mid] == x)
-        {
+void print(int list[], int size){
+    printf("\n Array List : ");
+    for(int i = 0; i < size ; i++){
+        printf("%d  ", list[i]);
+    }
+}
+
+int binarySearch(int list[], int size, int target){
+    int start = 0; 
+    int end = size -1;
+    int mid = ((start + end)/2);
+    for(int i = start ; start <= end; i++){
+        if(target == list[mid]){
             return mid;
         }
-        if (arr[mid] < x)
-        {
-            low = mid + 1;
+        if(target < list[mid]){
+            end = mid -1;
         }
-        else
-        {
-            high = mid - 1;
+        if(target > list[mid]){
+            start = mid +1;
         }
+        mid = (start + end)/2;
     }
 
     return -1;
+}
+
+int main(void){
+
+    int list[] = {11, 10, 9, 7, 8, 5, 6, 4, 1, 2, 3};
+    int size = sizeof(list)/sizeof(list[0]);
+    int target = 1;
+
+    sort(list, size);
+    print(list, size);
+
+    int result = binarySearch(list, size, target);
+    (result == -1) ? printf("\n Not Found.") : printf("\n Found at index : %d", result);
+
+    return 0;
 }
